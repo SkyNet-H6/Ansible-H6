@@ -1,0 +1,28 @@
+- name: Set the system clock
+  ios_command:
+    commands:
+      - clock set 14:47:00 5 december 2024
+  register: clock_set_output
+
+- name: Display clock set output
+  debug:
+    var: clock_set_output.stdout_lines
+
+- name: Configure timezone to GMT+1
+  ios_config:
+    lines:
+      - clock timezone gmt 1
+
+- name: Configure summer-time with recurring schedule
+  ios_config:
+    lines:
+      - clock summer-time gmt recurring
+
+- name: Configure NTP server
+  ios_config:
+    lines:
+      - ntp server 10.2.20.35
+
+- name: Save the configuration
+  ios_config:
+    save_when: changed

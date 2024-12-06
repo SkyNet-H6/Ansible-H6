@@ -1,0 +1,9 @@
+- hosts: all
+  roles:
+    - cisco
+  become: true
+  become_method: enable
+  gather_facts: no
+  vars:
+    ansible_network_os: cisco.ios.ios
+    ansible_connection: network_cli

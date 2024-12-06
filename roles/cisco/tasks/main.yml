@@ -1,0 +1,5 @@
+- name: Include NTP tasks
+  include_tasks: ntp.yml
+
+#- name: Include Syslog tasks
+#  include_tasks: syslog.yml
