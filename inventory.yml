@@ -1,0 +1,53 @@
+# inventory.yml
+
+all:
+  children:
+    stockholm:
+      children:
+        core_switches:
+          hosts:
+            stockholm-core-switch1:
+              ansible_host: 10.2.10.21
+              ansible_network_os: ios
+              ansible_user: NetAnsible
+              ansible_password: Passw0rd123!
+        routers:
+          hosts:
+            stockholm-router1:
+              ansible_host: 10.2.10.3
+              ansible_network_os: ios
+              ansible_user: NetAnsible
+              ansible_password: Passw0rd123!
+            stockholm-router2:
+              ansible_host: 10.2.10.1
+              ansible_network_os: ios
+              ansible_user: NetAnsible
+              ansible_password: Passw0rd123!
+        access_switches:
+          hosts:
+            stockholm-access-switch1:
+              ansible_host: 10.2.10.31
+              ansible_network_os: ios
+              ansible_user: NetAnsible
+              ansible_password: Passw0rd123!
+            stockholm-access-switch2:
+              ansible_host: 10.2.10.32
+              ansible_network_os: ios
+              ansible_user: NetAnsible
+              ansible_password: Passw0rd123!
+    berlin:
+      children:
+        core_switches:
+          hosts:
+            berlin-core-switch1:
+              ansible_host: 10.3.10.21
+              ansible_network_os: ios
+              ansible_user: NetAnsible
+              ansible_password: Passw0rd123!
+        routers:
+          hosts:
+            berlin-router1:
+              ansible_host: 10.3.10.1
+              ansible_network_os: ios
+              ansible_user: NetAnsible
+              ansible_password: Passw0rd123!
